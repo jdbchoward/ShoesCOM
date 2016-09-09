@@ -1,0 +1,138 @@
+baidu_input:
+  type:id
+  value:"%s"
+baidu_button:
+  type:id
+  value:"%s%s"
+baidu_input1:
+  type:id
+  value:kw
+baidu_button1:
+  type:xpath
+  value:"//div[@id='%productId%']//div"
+Ranorex_btn_Search:
+  type:xpath
+  value:"//input[@id='gsc-i-id1']"
+Ranorex_btn_Img:
+  type:cssSelector
+  value:"figure.image > img"
+TED_Search_StartDate:
+  type:xpath
+  value:"(//input[@name='startDate'])[2]"
+TED_Search_EndDate:
+  type:xpath
+  value:"(//input[@name='endDate'])[2]"
+TED_Search_RoomCount:
+  type:xpath
+  value:"(//input[@id='roomCount'])[2]"
+TED_Search_btn:
+  type:xpath
+  value:"(//input[@value='Search'])[2]"
+TED_Search_tooltip:
+  type:xpath
+  value:"//div[@content='Should be a valid date']"  
+TED_Filter_rating:
+  type:xpath
+  value:"//input[@type='checkbox'])[2]"
+TED_Filter_lable:
+  type:xpath
+  value:"//em[contains(text(),'2 Hotels')]"
+TED_Filter_availableHotels:
+  type:xpath
+  value:"//h4[contains(text(),'Available Hotels')]"  
+TED_HotelOverView_viewLabel:
+  type:xpath
+  value:"//h4[contains(text(),'Hotel Description')]" 
+TED_HotelOverView_HotelDetailText:
+  type:xpath
+  value:"//div[@class='col-xs-12 ng-binding' and contains(text(),'Fairmont Waterfront')]" 
+TED_HotelOverView_hotelPriceTag:
+  type:xpath
+  value:"//span[contains(text(),'$')]"
+TED_HotelOverView_hotelPrice:
+  type:xpath
+  value:"//div[@class='row top2']/div/span[contains(text(),'$')]"
+TED_HotelCheckout_continueBtn:
+  type:linkText
+  value:"Continue" 
+TED_HotelCheckout_Form_companyName:
+  type:name
+  value:"companyName" 
+TED_HotelCheckout_Form_salutation:
+  type:name
+  value:"salutation"  
+TED_HotelCheckout_Form_firstName:
+  type:name
+  value:"firstName"
+TED_HotelCheckout_Form_lastName:
+  type:name
+  value:"lastName"
+TED_HotelCheckout_Form_address:
+  type:name
+  value:"address"
+TED_HotelCheckout_Form_city:
+  type:name
+  value:"city"
+TED_HotelCheckout_Form_country:
+  type:id
+  value:"country"
+TED_HotelCheckout_Form_stateProvince:
+  type:id
+  value:"stateProvince"
+TED_HotelCheckout_Form_zipCode:
+  type:name
+  value:"zipCode"
+TED_HotelCheckout_Form_telephone:
+  type:name
+  value:"telephone"
+TED_HotelCheckout_Form_email:
+  type:name
+  value:"email"
+TED_HotelCheckout_Form_email2:
+  type:name
+  value:"email2"
+TED_HotelCheckout_Form_creditCardType:
+  type:id
+  value:"creditCardType"
+TED_HotelCheckout_Form_creditCardNumber:
+  type:id
+  value:"creditCardNumber"
+TED_HotelCheckout_Form_creditCardExpirationMonth:
+  type:id
+  value:"creditCardExpirationMonth"
+TED_HotelCheckout_Form_creditCardExpirationYear:
+  type:id
+  value:"creditCardExpirationYear"
+TED_HotelCheckout_Form_creditCardName:
+  type:name
+  value:"creditCardName"
+TED_HotelCheckout_Form_eta:
+  type:id
+  value:"eta"
+TED_HotelCheckout_Form_Guest1FirstName:
+  type:xpath
+  value:"//input[@placeholder='Guest 1 First Name*']"
+TED_HotelCheckout_Form_Guest1LastName:
+  type:xpath
+  value:"//input[@placeholder='Guest 1 Last Name*']"
+TED_HotelCheckout_Form_Guest1Email:
+  type:xpath
+  value:"//input[@placeholder='Guest Email Address*']"
+TED_HotelCheckout_Form_Guest2FirstName:
+  type:xpath
+  value:"//input[@placeholder='Guest 2 First Name*']"
+TED_HotelCheckout_Form_Guest2LastName:
+  type:xpath
+  value:"//input[@placeholder='Guest 2 Last Name*']"
+TED_HotelCheckout_Form_ReviewBtn:
+  type:xpath
+  value:"//span[contains(text(),'Review')]"
+TED_HotelCheckout_confirm:
+  type:xpath
+  value:"//h4[contains(text(),'Review and Submit Reservation')]" 
+TED_ShoesCOM_signInBtn:
+  type:xpath
+  value:"//a[@data-i18n='localize_login']"
+TED_ShoesCOM_signOutBtn:
+  type:xpath
+  value:"//a[@data-i18n='localize_log-out']" 

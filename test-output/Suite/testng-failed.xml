@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Suite]" parallel="tests">
+  <test name="Test(failed)" parallel="tests">
+    <classes>
+      <class name="TEDHotelReservation.TestRoomSearch">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testSearchWhenDateFormatIsWrong"/>
+          <include name="setUp"/>
+          <include name="quitApp"/>
+          <include name="testSearchInRegularWay"/>
+        </methods>
+      </class> <!-- TEDHotelReservation.TestRoomSearch -->
+      <class name="TEDHotelReservation.TestHotelFilter">
+        <methods>
+          <include name="tearDown"/>
+          <include name="quitApp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- TEDHotelReservation.TestHotelFilter -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

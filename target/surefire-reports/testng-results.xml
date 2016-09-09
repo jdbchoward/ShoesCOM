@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="38805" started-at="2016-09-08T15:48:29Z" finished-at="2016-09-08T15:49:08Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="38805" started-at="2016-09-08T15:48:29Z" finished-at="2016-09-08T15:49:08Z">
+      <class name="TEDHotelReservation.TestHotelFilter">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TEDHotelReservation.TestHotelFilter@3cbbc1e0]" name="setUp" is-config="true" duration-ms="3170" started-at="2016-09-08T08:48:29Z" finished-at="2016-09-08T08:48:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TEDHotelReservation.TestRoomSearch@61dc03ce]" name="setUp" is-config="true" duration-ms="3090" started-at="2016-09-08T08:48:32Z" finished-at="2016-09-08T08:48:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testFilterByRating()[pri:0, instance:TEDHotelReservation.TestHotelFilter@3cbbc1e0]" name="testFilterByRating" duration-ms="17340" started-at="2016-09-08T08:48:35Z" finished-at="2016-09-08T08:48:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFilterByRating -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TEDHotelReservation.TestHotelFilter@3cbbc1e0]" name="tearDown" is-config="true" duration-ms="3150" started-at="2016-09-08T08:48:52Z" finished-at="2016-09-08T08:48:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TEDHotelReservation.TestHotelFilter -->
+      <class name="TEDHotelReservation.TestRoomSearch">
+        <test-method status="PASS" signature="testSearchInRegularWay()[pri:0, instance:TEDHotelReservation.TestRoomSearch@61dc03ce]" name="testSearchInRegularWay" duration-ms="17021" started-at="2016-09-08T08:48:35Z" finished-at="2016-09-08T08:48:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchInRegularWay -->
+        <test-method status="PASS" signature="testSearchWhenDateFormatIsWrong()[pri:0, instance:TEDHotelReservation.TestRoomSearch@61dc03ce]" name="testSearchWhenDateFormatIsWrong" duration-ms="12409" started-at="2016-09-08T08:48:52Z" depends-on-methods="TEDHotelReservation.TestRoomSearch.testSearchInRegularWay" finished-at="2016-09-08T08:49:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchWhenDateFormatIsWrong -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TEDHotelReservation.TestRoomSearch@61dc03ce]" name="tearDown" is-config="true" duration-ms="3102" started-at="2016-09-08T08:49:05Z" finished-at="2016-09-08T08:49:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TEDHotelReservation.TestRoomSearch -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
