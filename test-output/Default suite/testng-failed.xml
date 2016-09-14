@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="ShoseWebsite.TestSignIn">
+      <class name="ShoseWebsite.TestShoesSearch">
         <methods>
+          <include name="testAddShoesToWishList"/>
           <include name="setUp"/>
-          <include name="testSignInWithCorrectInfo"/>
-          <include name="testSignInWithBadInfo"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- ShoseWebsite.TestSignIn -->
+      </class> <!-- ShoseWebsite.TestShoesSearch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

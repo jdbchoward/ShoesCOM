@@ -269,4 +269,83 @@ public class TestOperations {
 //		return (driver.findElement(By.xpath("//a[@data-i18n=\"localize_log-in\"]")).getText().equalsIgnoreCase("Sign in / Create Account")?true:false);
 		return !driver.getCurrentUrl().contains("sid");
 	}
+	
+	
+	public void navigationToManShoes()
+	{
+		WebElement w=driver.findElement(By.xpath("//a[@data-i18n='localize_waterproof']"));
+		common.javascriptClick(driver, w);
+
+	}
+	
+	public void filterShoes()
+	{
+		driver.findElement(By.xpath("//span[@data-i18n='localize_nxt-8.5']")).click();
+	}
+	
+	public void selectItem()
+	{
+		driver.findElement(By.xpath("//img[contains(@src,'https://cdn.shopify.com/s/files/1/0121/3322/products/176643_1000_45_3b288327-be1e-4090-a98a-933f96a98232_medium.jpeg?v=1458761530')]")).click();
+		 wait.threadWait(10000); 
+		driver.findElement(By.xpath("//div[@id='size-options']/div[4]")).click();
+		driver.findElement(By.xpath("//div[@id='width-options']/div")).click();	
+	}
+	public void addItem()
+	{
+	
+		driver.findElement(By.id("add")).click();
+	}
+	
+	public void addToWishList()
+	{
+		driver.findElement(By.cssSelector("#add-to-wishlist > a > span")).click();
+	}
+	
+	
+	public boolean checkShoppingCart()
+	{
+		String bagCount=driver.findElement(By.xpath("//span[@id='bag-count']")).getText();
+	    if(bagCount!=null&&!bagCount.equalsIgnoreCase("")) 
+	    	return (Integer.parseInt(bagCount)>0?true:false);
+	    else
+	    	return false;
+	}
+	
+	public boolean checkWishList()
+	{
+		String wishCount=driver.findElement(By.xpath("//span[@id='wishlist-count']")).getText();
+	    if(wishCount!=null&&!wishCount.equalsIgnoreCase("")) 
+	    	return (Integer.parseInt(wishCount)>0?true:false);
+	    else
+	    	return false;
+	}
+    
+	public void checkShoppingCartContent()
+	{
+		driver.findElement(By.id("bag-count")).click();
+		driver.findElement(By.xpath("//form[@id='cart-form']/div[2]/div/div[2]/div/div[2]/a/span")).click();
+
+	}
+	
+	public void checkWishListContent()
+	{
+		driver.findElement(By.cssSelector("#wishlist-link > span.localize.util-text")).click();
+
+	}
+	
+	
+	public boolean searchShoe()
+	{
+		driver.get("http://www.shoeme.ca/");
+		wait.threadWait(5000);
+		driver.findElement(By.id("search-field")).clear();
+		driver.findElement(By.id("search-field")).sendKeys("Men's Moab Ventilator");
+		driver.findElement(By.xpath("//div[@id='search-submit']/i")).click();
+		wait.threadWait(5000);
+        String result=driver.findElement(By.cssSelector("b.nxt-result-total")).getText();
+	    if(result!=null&&!result.equalsIgnoreCase("")) 
+	    	return (Integer.parseInt(result)>0?true:false);
+	    else
+	    	return false;
+	}
 }
