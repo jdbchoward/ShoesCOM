@@ -1,6 +1,5 @@
 package PageObjects;
 
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
@@ -22,14 +21,14 @@ public class BrowserLoader {
 	private String driverpath = "src\\test\\resources\\";
 
 	public static String nodeurl = "";
-	
-	public BrowserLoader(String browsertype){
-		
-		if(browsertype.equalsIgnoreCase("firefox"))
+
+	public BrowserLoader(String browsertype) {
+
+		if (browsertype.equalsIgnoreCase("firefox"))
 			initBrowser(BrowserTypes.firefox);
-		if(browsertype.equalsIgnoreCase("ie"))
+		if (browsertype.equalsIgnoreCase("ie"))
 			initBrowser(BrowserTypes.ie);
-		if(browsertype.equalsIgnoreCase("chrome"))
+		if (browsertype.equalsIgnoreCase("chrome"))
 			initBrowser(BrowserTypes.chrome);
 	}
 
@@ -37,9 +36,8 @@ public class BrowserLoader {
 
 		initBrowser(browserstype);
 	}
-	
-	private void initBrowser(BrowserTypes browserstype)
-	{
+
+	private void initBrowser(BrowserTypes browserstype) {
 		switch (browserstype) {
 		case firefox:
 			System.setProperty("webdriver.gecko.driver", driverpath + "geckodriver.exe");
@@ -70,7 +68,7 @@ public class BrowserLoader {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			//driver.manage().window().maximize();
+			// driver.manage().window().maximize();
 			break;
 		case ie:
 			System.setProperty("webdriver.ie.driver", driverpath + "IEDriverServer.exe");
@@ -78,10 +76,10 @@ public class BrowserLoader {
 			caps.setCapability(InternetExplorerDriver.FORCE_CREATE_PROCESS, false);
 			caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 			caps.setCapability(InternetExplorerDriver.IE_SWITCHES, "-private");
-			caps.setCapability("ignoreZoomSetting", true);			
+			caps.setCapability("ignoreZoomSetting", true);
 			caps.setCapability("ignoreProtectedModeSettings", true);
 			caps.setCapability("ie.unexpectedAlertBehaviour", "accept");
-			
+
 			if (nodeurl.equals(""))
 				driver = new InternetExplorerDriver(caps);
 			else
@@ -91,16 +89,16 @@ public class BrowserLoader {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			//driver.manage().window().maximize();
+			// driver.manage().window().maximize();
 			break;
 		case chrome:
 			System.setProperty("webdriver.chrome.driver", driverpath + "chromedriver.exe");
-		    ChromeOptions options=new ChromeOptions();
-		    options.addArguments("-incognito");
-		    options.addArguments("--disable-popup-blocking");
-		    options.addArguments("no-sandbox");
-		    options.addArguments("chrome.switches","--disable-extensions");
-		
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("-incognito");
+			options.addArguments("--disable-popup-blocking");
+			options.addArguments("no-sandbox");
+			options.addArguments("chrome.switches", "--disable-extensions");
+
 			// capabilities.setCapability("chrome.switches",
 			// Arrays.asList("--proxy-server=http://your-proxy-domain:4443"));
 
@@ -113,7 +111,7 @@ public class BrowserLoader {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			//driver.manage().window().maximize();
+			// driver.manage().window().maximize();
 			break;
 		}
 	}

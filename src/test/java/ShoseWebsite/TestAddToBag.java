@@ -1,5 +1,7 @@
 package ShoseWebsite;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -61,7 +63,6 @@ public class TestAddToBag {
         wait.threadWait(waitTimes); 
         Assert.assertTrue(testOperation.checkShoppingCart());        
 //        testOperation.addToWishList();
-
 	}
 
 

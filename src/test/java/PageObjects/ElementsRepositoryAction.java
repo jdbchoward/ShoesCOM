@@ -122,13 +122,13 @@ public class ElementsRepositoryAction {
 		return this.getLocator(key, null, false);
 	}
 
-	// 多态形式，字符串替换
+
 	public WebElement getElementNoWait(String key, String[] replace) {
 
 		return this.getLocator(key, replace, false);
 	}
 
-	// 由于getElement和getElementNoWait非常相似，所以重构一下这两个方法
+
 	private WebElement getLocator(String key, String[] replace, boolean needWait) {
 		WebElement element = null;
 		if (elementRepository.containsKey(key)) {

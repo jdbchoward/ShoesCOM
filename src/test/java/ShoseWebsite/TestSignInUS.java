@@ -28,7 +28,7 @@ import junit.framework.Assert;
 
 
 
-public class TestSignIn {
+public class TestSignInUS {
 	private WebDriver driver;
 	private Wait wait;
 	CommonActions common;
@@ -52,23 +52,18 @@ public class TestSignIn {
 	@Test
 	public void testSignInWithCorrectInfo() throws Exception {
 
-	    testOperation.doSignIn("hiend@yeah.net", "10011001");
-//		wait.waitElementToBeDisplayed(By.xpath("//div[@id='admin_header']/h1"));
-//		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='admin_header']/h1")).getText().equalsIgnoreCase("Account Details and Order History"));
+	    testOperation.doSignInUSsite("hiend@yeah.net", "10011001");
 	    wait.threadWait(3000);
-	    Assert.assertTrue(!testOperation.checkSignOutStatus());
-//	    wait.threadWait(5000);
-		testOperation.doSignOut();
-		wait.threadWait(1000);
+	    Assert.assertTrue(testOperation.checkUSSignInStatus());
+		testOperation.doSignOutUS();
+//		wait.threadWait(1000);
 	}
 
 	@Test(dependsOnMethods = { "testSignInWithCorrectInfo" })
 	public void testSignInWithBadInfo() throws Exception {
 
-		testOperation.doSignIn("aa", "111");
-		driver.get("http://www.shoeme.ca/");
-		wait.threadWait(1000);
-		Assert.assertTrue(testOperation.checkSignOutStatus());
+		testOperation.doSignInUSsite("aa", "111");
+		Assert.assertTrue(!testOperation.checkUSSignInStatus());
 	}
 
 	@AfterClass(alwaysRun = true)

@@ -3,18 +3,13 @@
 <suite name="Suite" parallel="classes" thread-count="3">
 	<test name="Test" enabled="true">
 		<packages>
-		<!--
-			<package name="TestSuite1.*" />
-			-->
 			<package name="ShoseWebsite.*" />
 		</packages>
 
 		<classes>
-		<!-- 
-			<class name="example.IEcase" />
-			<class name="example.NewTest" />
-			<class name="example.Firefoxcase" />
-			 -->
+			<!-- <class name="example.IEcase" /> 
+			<class name="example.NewTest" /> 
+			<class name="example.Firefoxcase" /> -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

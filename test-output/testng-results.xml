@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="99167" started-at="2016-09-14T19:02:01Z" finished-at="2016-09-14T19:03:40Z">
+  <suite name="Default suite" duration-ms="71087" started-at="2016-09-23T22:34:16Z" finished-at="2016-09-23T22:35:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="99167" started-at="2016-09-14T19:02:01Z" finished-at="2016-09-14T19:03:40Z">
-      <class name="ShoseWebsite.TestShoesSearch">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ShoseWebsite.TestShoesSearch@4501b7af]" name="setUp" is-config="true" duration-ms="4821" started-at="2016-09-14T12:02:01Z" finished-at="2016-09-14T12:02:05Z">
+    <test name="Default test" duration-ms="71087" started-at="2016-09-23T22:34:16Z" finished-at="2016-09-23T22:35:28Z">
+      <class name="ShoseWebsite.TestSignInUS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ShoseWebsite.TestSignInUS@5b275dab]" name="setUp" is-config="true" duration-ms="3600" started-at="2016-09-23T15:34:16Z" finished-at="2016-09-23T15:34:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testAddShoesToWishList()[pri:0, instance:ShoseWebsite.TestShoesSearch@4501b7af]" name="testAddShoesToWishList" duration-ms="93378" started-at="2016-09-14T12:02:05Z" finished-at="2016-09-14T12:03:39Z">
+        <test-method status="PASS" signature="testSignInWithCorrectInfo()[pri:0, instance:ShoseWebsite.TestSignInUS@5b275dab]" name="testSignInWithCorrectInfo" duration-ms="37498" started-at="2016-09-23T15:34:20Z" finished-at="2016-09-23T15:34:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddShoesToWishList -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ShoseWebsite.TestShoesSearch@4501b7af]" name="tearDown" is-config="true" duration-ms="954" started-at="2016-09-14T12:03:39Z" finished-at="2016-09-14T12:03:40Z">
+        </test-method> <!-- testSignInWithCorrectInfo -->
+        <test-method status="PASS" signature="testSignInWithBadInfo()[pri:0, instance:ShoseWebsite.TestSignInUS@5b275dab]" name="testSignInWithBadInfo" duration-ms="26932" started-at="2016-09-23T15:34:58Z" depends-on-methods="ShoseWebsite.TestSignInUS.testSignInWithCorrectInfo" finished-at="2016-09-23T15:35:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSignInWithBadInfo -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ShoseWebsite.TestSignInUS@5b275dab]" name="tearDown" is-config="true" duration-ms="3037" started-at="2016-09-23T15:35:24Z" finished-at="2016-09-23T15:35:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ShoseWebsite.TestShoesSearch -->
+      </class> <!-- ShoseWebsite.TestSignInUS -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
