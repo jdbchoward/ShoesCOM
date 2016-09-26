@@ -133,17 +133,91 @@ public class TestOperations {
 
 	/// -----------------------------------
 
+	public void OpenShoeCOMUSA(WebDriver webdriver) {
+
+		driver.manage().window().maximize();
+		driver.get("http://www.shoeme.ca/");
+		wait.WaitUntilPageLoaded();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//close first time advertisement
+		if (ElementExist(By.xpath("//button[@data-i18n='localize_continue-shopping']"))) {
+			List<WebElement> continueBtn = driver
+					.findElements(By.xpath("//button[@data-i18n='localize_continue-shopping']"));
+			if (continueBtn != null && continueBtn.size() > 0) {
+				common.javascriptClick(webdriver, continueBtn.get(0));
+				common.javascriptClick(webdriver, continueBtn.get(1));
+			}
+
+		}
+
+		wait.threadWait(2000);
+		// Go to careers
+		driver.findElement(By.xpath("//a[@id='signin-link']/span")).click();
+		WebElement Careerbutton = webdriver.findElement(By.xpath("//a[@data-i18n='localize_careers']"));
+		Careerbutton.click();
+
+		String CareerURL = webdriver.getCurrentUrl();
+		if (CareerURL.contains("careers")) {
+
+			WebElement ShippingToCanadaBox = webdriver.findElement(By.xpath("//a[@id='closeButton']"));// a
+																										// id
+																										// =closeButton
+
+			ShippingToCanadaBox.click();
+			wait.threadWait(2000);
+			// open shoe.com
+			WebElement ShoeComUSAButton = webdriver.findElement(By.xpath("//i[@class='icon-shoes-large']"));
+			ShoeComUSAButton.click();
+
+		}
+
+	}
+
+	public void changeToShipToUSA() {
+		if (!ElementExist(By.xpath("//span[@class='nav-labels' and contains(text(),'My Account')]"))) {
+			// change to ship to USA
+			driver.findElement(By.cssSelector("img.nav-locale-flag")).click();
+			wait.threadWait(2000);
+			new Select(driver.findElement(By.id("Input_CountryCode"))).selectByVisibleText("United States");
+			driver.findElement(By.cssSelector("button.submit.modalSubmit")).click();
+			wait.threadWait(2000);
+
+		}
+
+		if (ElementExist(By.xpath("//a[contains(text(),'CLOSE')]"))) {
+			driver.findElement(By.xpath("//a[contains(text(),'CLOSE')]")).click();
+			wait.threadWait(2000);
+		}
+	}
+
 	public void doSignInUSsite(String username, String psw) {
 		driver.manage().window().maximize();
-		driver.get("http://www.shoes.com/");
+		// driver.get("http://www.shoes.com/");
+		OpenShoeCOMUSA(driver);
 		wait.WaitUntilPageLoaded();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		
-		if (ElementExist(By.xpath("//a[contains(text(),'CLOSE')]"))) {
-			driver.findElement(By.xpath("//a[contains(text(),'CLOSE')]")).click();
-		}
-		
+		changeToShipToUSA();
+
+		// start to login
+		driver.findElement(By.xpath("//span[@class='nav-labels' and contains(text(),'My Account')]")).click();
+		wait.threadWait(2000);
+
+		WebElement element = driver
+				.findElement(By.xpath("//div[@class='dropdown__menuInner']/descendant::a[contains(text(),'Sign In')]"));
+		common.javascriptClick(driver, element);
+		wait.threadWait(2000);
+		driver.findElement(By.id("Input_Email")).clear();
+		driver.findElement(By.id("Input_Email")).sendKeys(username);
+		driver.findElement(By.id("Input_Password")).clear();
+		driver.findElement(By.id("Input_Password")).sendKeys(psw);
+		driver.findElement(By.xpath("//button[@value='Sign In']")).click();
+
+	}
+
+	public void doSignInUSsiteAgain(String username, String psw) {
+		// start to login
 		driver.findElement(By.xpath("//span[@class='nav-labels' and contains(text(),'My Account')]")).click();
 		wait.threadWait(2000);
 
@@ -170,7 +244,7 @@ public class TestOperations {
 	public boolean doSignOutUS() {
 		common.javascriptClick(driver, driver.findElement(
 				By.xpath("//div[@class='dropdown__menuInner']/descendant::a[contains(text(),'Sign Out')]")));
-//		wait.threadWait(3000);
+		// wait.threadWait(3000);
 		return !checkUSSignInStatus();
 	}
 
@@ -182,36 +256,34 @@ public class TestOperations {
 			return false;
 		}
 	}
-	
-	
-	
+
 	public boolean searchShoeUS() {
 		driver.get("http://www.shoes.com/");
 		wait.threadWait(5000);
-//		List<WebElement> searchInput=driver.findElements(By.xpath("//div[@class='search-container']/input[@id='searchstring']"));
-//		List<WebElement> searchInput=driver.findElements(By.xpath("//input[@id='searchstring']"));
+		// List<WebElement>
+		// searchInput=driver.findElements(By.xpath("//div[@class='search-container']/input[@id='searchstring']"));
+		// List<WebElement>
+		// searchInput=driver.findElements(By.xpath("//input[@id='searchstring']"));
 		driver.findElement(By.cssSelector("#frmTextSearchlg > #searchstring")).clear();
 		driver.findElement(By.cssSelector("#frmTextSearchlg > #searchstring")).sendKeys("Men's Moab Ventilator");
 
 		driver.findElement(By.xpath("//*[@id='nav-search-expanded-trigger']/i")).click();
 		wait.threadWait(5000);
-		String result = driver.findElement(By.cssSelector("div.row > #productListCount > b")).getText();		
-	    log.debug("search result is : "+result);
+		String result = driver.findElement(By.cssSelector("div.row > #productListCount > b")).getText();
+		log.debug("search result is : " + result);
 		if (result != null && !result.equalsIgnoreCase(""))
 			return (Integer.parseInt(result) > 0 ? true : false);
 		else
 			return false;
 	}
-	
-	
+
 	public void navigationToManShoesUS() {
 		List<WebElement> w = driver.findElements(By.xpath("//a[contains(text(),'Boots')]"));
-		if(w!=null&&w.size()>0)
+		if (w != null && w.size() > 0)
 			common.javascriptClick(driver, w.get(0));
 
 	}
-	
-	
+
 	public void filterShoesUS() {
 		driver.findElement(By.xpath("//a[@data-facetval='adultfootwear:8.5']")).click();
 	}

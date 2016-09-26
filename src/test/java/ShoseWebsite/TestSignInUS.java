@@ -62,7 +62,7 @@ public class TestSignInUS {
 	@Test(dependsOnMethods = { "testSignInWithCorrectInfo" })
 	public void testSignInWithBadInfo() throws Exception {
 
-		testOperation.doSignInUSsite("aa", "111");
+		testOperation.doSignInUSsiteAgain("aa", "111");
 		Assert.assertTrue(!testOperation.checkUSSignInStatus());
 	}
 

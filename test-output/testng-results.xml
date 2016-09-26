@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="59812" started-at="2016-09-26T19:02:53Z" finished-at="2016-09-26T19:03:53Z">
+  <suite name="Default suite" duration-ms="81865" started-at="2016-09-26T21:36:38Z" finished-at="2016-09-26T21:38:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="59812" started-at="2016-09-26T19:02:53Z" finished-at="2016-09-26T19:03:53Z">
+    <test name="Default test" duration-ms="81865" started-at="2016-09-26T21:36:38Z" finished-at="2016-09-26T21:38:00Z">
       <class name="ShoseWebsite.TestFilterShoesUS">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ShoseWebsite.TestFilterShoesUS@4501b7af]" name="setUp" is-config="true" duration-ms="3645" started-at="2016-09-26T12:02:53Z" finished-at="2016-09-26T12:02:57Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:ShoseWebsite.TestFilterShoesUS@4501b7af]" name="setUp" is-config="true" duration-ms="3405" started-at="2016-09-26T14:36:38Z" finished-at="2016-09-26T14:36:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testFilterSizeOfShoes()[pri:0, instance:ShoseWebsite.TestFilterShoesUS@4501b7af]" name="testFilterSizeOfShoes" duration-ms="52991" started-at="2016-09-26T12:02:57Z" finished-at="2016-09-26T12:03:50Z">
+        <test-method status="PASS" signature="testFilterSizeOfShoes()[pri:0, instance:ShoseWebsite.TestFilterShoesUS@4501b7af]" name="testFilterSizeOfShoes" duration-ms="75446" started-at="2016-09-26T14:36:42Z" finished-at="2016-09-26T14:37:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFilterSizeOfShoes -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ShoseWebsite.TestFilterShoesUS@4501b7af]" name="tearDown" is-config="true" duration-ms="3164" started-at="2016-09-26T12:03:50Z" finished-at="2016-09-26T12:03:53Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ShoseWebsite.TestFilterShoesUS@4501b7af]" name="tearDown" is-config="true" duration-ms="2999" started-at="2016-09-26T14:37:57Z" finished-at="2016-09-26T14:38:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
