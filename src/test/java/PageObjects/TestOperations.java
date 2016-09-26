@@ -182,4 +182,37 @@ public class TestOperations {
 			return false;
 		}
 	}
+	
+	
+	
+	public boolean searchShoeUS() {
+		driver.get("http://www.shoes.com/");
+		wait.threadWait(5000);
+//		List<WebElement> searchInput=driver.findElements(By.xpath("//div[@class='search-container']/input[@id='searchstring']"));
+//		List<WebElement> searchInput=driver.findElements(By.xpath("//input[@id='searchstring']"));
+		driver.findElement(By.cssSelector("#frmTextSearchlg > #searchstring")).clear();
+		driver.findElement(By.cssSelector("#frmTextSearchlg > #searchstring")).sendKeys("Men's Moab Ventilator");
+
+		driver.findElement(By.xpath("//*[@id='nav-search-expanded-trigger']/i")).click();
+		wait.threadWait(5000);
+		String result = driver.findElement(By.cssSelector("div.row > #productListCount > b")).getText();		
+	    log.debug("search result is : "+result);
+		if (result != null && !result.equalsIgnoreCase(""))
+			return (Integer.parseInt(result) > 0 ? true : false);
+		else
+			return false;
+	}
+	
+	
+	public void navigationToManShoesUS() {
+		List<WebElement> w = driver.findElements(By.xpath("//a[contains(text(),'Boots')]"));
+		if(w!=null&&w.size()>0)
+			common.javascriptClick(driver, w.get(0));
+
+	}
+	
+	
+	public void filterShoesUS() {
+		driver.findElement(By.xpath("//a[@data-facetval='adultfootwear:8.5']")).click();
+	}
 }
